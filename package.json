@@ -1,0 +1,14 @@
+{
+  "name": "@lxndr/eslint-config",
+  "version": "1.0.0-alpha.1",
+  "description": "My awesome  eslint config",
+  "main": "index.js",
+  "author": "lxndr",
+  "license": "ISC",
+  "peerDependencies": {
+    "eslint": "^6.1.0"
+  },
+  "optionalDependencies": {
+    "eslint-plugin-import": "^2.18.2"
+  }
+}

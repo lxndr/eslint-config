@@ -1,0 +1,5 @@
+extends:
+  - ./node
+
+rules:
+  no-magic-numbers: off

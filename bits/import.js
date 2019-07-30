@@ -2,6 +2,16 @@ module.exports = {
   plugins: [
     'import',
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: [
+          '.js',
+          '.jsx',
+        ],
+      },
+    },
+  },
   rules: {
     /* static analysis */
     'import/no-unresolved': ['error', {
@@ -41,9 +51,9 @@ module.exports = {
     'import/no-named-as-default-member': 'error',
     'import/no-deprecated': 'error',
     'import/no-extraneous-dependencies': ['error', {
-      'devDependencies': true,
-      'optionalDependencies': true,
-      'peerDependencies': true,
+      devDependencies: true,
+      optionalDependencies: true,
+      peerDependencies: true,
     }],
     'import/no-mutable-exports': 'error',
 
@@ -58,14 +68,17 @@ module.exports = {
 
     /* style guide */
     'import/first': 'error',
-    'import/exports-last': 'error',
+    'import/exports-last': 'off',
     'import/no-duplicates': 'error',
     'import/no-namespace': 'error',
     'import/extensions': ['error', 'always', {
-      js: 'never',
-      jsx: 'never',
-      ts: 'never',
-      tsx: 'never',
+      ignorePackages: true,
+      pattern: {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
     }],
     'import/order': ['error', {
       'groups': ['builtin', 'external', 'parent', 'sibling', 'index'],

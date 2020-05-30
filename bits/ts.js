@@ -183,15 +183,7 @@ module.exports = {
       allowDestructuring: false,
     }],
     '@typescript-eslint/no-throw-literal': 'error',
-    '@typescript-eslint/no-type-alias': ['error', {
-      allowAliases: 'in-unions-and-intersections',
-      allowCallbacks: 'always',
-      allowConditionalTypes: 'always',
-      allowConstructors: 'always',
-      allowLiterals: 'always',
-      allowMappedTypes: 'always',
-      allowTupleTypes: 'always',
-    }],
+    '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
     '@typescript-eslint/no-unnecessary-condition': ['error', {
       allowConstantLoopConditions: true,

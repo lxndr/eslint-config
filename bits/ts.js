@@ -39,7 +39,12 @@ module.exports = {
       readonly: 'array',
     }],
     '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/ban-ts-ignore': 'error',
+    '@typescript-eslint/ban-ts-comment': ['error', {
+      'ts-expect-error': true,
+      'ts-ignore': true,
+      'ts-nocheck': true,
+      'ts-check': true,
+    }],
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/brace-style': ['error', '1tbs', {
       allowSingleLine: false,

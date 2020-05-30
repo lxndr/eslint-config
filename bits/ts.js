@@ -99,7 +99,8 @@ module.exports = {
     }],
     '@typescript-eslint/member-ordering': 'error',
     '@typescript-eslint/method-signature-style': ['error', 'method'],
-    '@typescript-eslint/naming-convention': ['error', [
+    '@typescript-eslint/naming-convention': [
+      'error',
       {
         selector: 'default',
         format: ['camelCase'],
@@ -111,10 +112,16 @@ module.exports = {
         format: ['camelCase', 'UPPER_CASE'],
       },
       {
+        selector: 'memberLike',
+        modifiers: ['private'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require',
+      },
+      {
         selector: 'typeLike',
         format: ['PascalCase'],
       },
-    ]],
+    ],
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-base-to-string': 'error',
     '@typescript-eslint/no-dupe-class-members': 'error',

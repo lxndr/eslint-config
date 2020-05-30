@@ -224,9 +224,7 @@ module.exports = {
       ignoreMixedLogicalExpressions: false,
     }],
     '@typescript-eslint/prefer-optional-chain': 'error',
-    '@typescript-eslint/prefer-readonly-parameter-types': ['error', {
-      checkParameterProperties: true,
-    }],
+    '@typescript-eslint/prefer-readonly-parameter-types': 'off', // too cumbersome. prefer no-param-reassign
     '@typescript-eslint/prefer-readonly': ['error', {
       onlyInlineLambdas: false,
     }],

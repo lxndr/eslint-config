@@ -19,11 +19,12 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-react-native": "^3.7.0",
     "eslint-plugin-fp": "^2.3.0",
-    "@typescript-eslint/eslint-plugin": "^1.13.0"
+    "@typescript-eslint/parser": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^3.0.2"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^1.13.0",
+    "@typescript-eslint/parser": "^3.0.2",
     "eslint": "^6.1.0",
-    "jest": "^24.8.0"
+    "jest": "^24.9.0"
   }
 }

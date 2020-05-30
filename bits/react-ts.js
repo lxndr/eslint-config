@@ -29,7 +29,7 @@ module.exports = {
       {
         selector: 'variable',
         types: ['function'],
-        format: ['PascalCase'],
+        format: ['camelCase', 'PascalCase'],
       },
     ],
   },

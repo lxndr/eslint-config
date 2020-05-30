@@ -141,7 +141,7 @@ module.exports = {
     'react/jsx-no-literals': ['error', {
       noStrings: false,
       allowedStrings: [],
-      ignoreProps: false,
+      ignoreProps: true,
     }],
     'react/jsx-no-target-blank': ['error', {
       enforceDynamicLinks: 'always',

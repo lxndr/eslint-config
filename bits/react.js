@@ -139,7 +139,9 @@ module.exports = {
       ignoreCase: false,
     }],
     'react/jsx-no-literals': ['error', {
-      noStrings: true,
+      noStrings: false,
+      allowedStrings: [],
+      ignoreProps: false,
     }],
     'react/jsx-no-target-blank': ['error', {
       enforceDynamicLinks: 'always',

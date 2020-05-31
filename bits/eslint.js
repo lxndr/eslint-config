@@ -97,7 +97,9 @@ module.exports = {
     'no-fallthrough': 'off',
     'no-floating-decimal': 'error',
     'no-global-assign': 'error',
-    'no-implicit-coercion': 'error',
+    'no-implicit-coercion': ['error', { // ! and !! are common idioms
+      allow: ['!!'],
+    }],
     'no-implicit-globals': 'error',
     'no-implied-eval': 'error',
     'no-invalid-this': 'error',
@@ -267,12 +269,7 @@ module.exports = {
       skipBlankLines: true,
       skipComments: true,
     }],
-    'max-lines-per-function': ['error', {
-      max: 50,
-      skipBlankLines: true,
-      skipComments: true,
-      IIFEs: true,
-    }],
+    'max-lines-per-function': 'off', // too harsh
     'max-nested-callbacks': ['error', {
       max: 3,
     }],

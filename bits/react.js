@@ -95,7 +95,7 @@ module.exports = {
     'react/void-dom-elements-no-children': 'error',
 
     /* jsx */
-    'react/jsx-boolean-value': ['error', 'always'],
+    'react/jsx-boolean-value': ['error', 'never'],
     'react/jsx-child-element-spacing': ['error', {
     }],
     'react/jsx-closing-bracket-location': ['error', {

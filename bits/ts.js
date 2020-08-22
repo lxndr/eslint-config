@@ -28,6 +28,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'no-useless-constructor': 'off',
+    'no-return-await': 'off',
     'quotes': 'off',
     'require-await': 'off',
     'semi': 'off',
@@ -45,6 +46,7 @@ module.exports = {
       'ts-nocheck': true,
       'ts-check': true,
     }],
+    '@typescript-eslint/ban-tslint-comment': 'error',
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/brace-style': ['error', '1tbs', {
       allowSingleLine: false,
@@ -59,27 +61,22 @@ module.exports = {
       assertionStyle: 'as',
       objectLiteralTypeAssertions: 'never',
     }],
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/default-param-last': 'error',
     '@typescript-eslint/dot-notation': ['error', {
       allowKeywords: true,
       allowPrivateClassPropertyAccess: false,
     }],
-    '@typescript-eslint/explicit-function-return-type': ['error', {
-      allowExpressions: true,
-      allowTypedFunctionExpressions: true,
-      allowHigherOrderFunctions: true,
-      allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-    }],
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': ['error', {
-      accessibility: 'explicit',
+      accessibility: 'no-public',
     }],
     '@typescript-eslint/explicit-module-boundary-types': ['error', {
-      allowTypedFunctionExpressions: true,
-      allowHigherOrderFunctions: true,
-      allowDirectConstAssertionInArrowFunctions: true,
+      allowArgumentsExplicitlyTypedAsAny: false,
+      allowDirectConstAssertionInArrowFunctions: false,
       allowedNames: [],
-      shouldTrackReferences: true,
+      allowHigherOrderFunctions: true,
+      allowTypedFunctionExpressions: true,
     }],
     '@typescript-eslint/func-call-spacing': ['error', 'never'],
     '@typescript-eslint/indent': ['error', 2],
@@ -90,7 +87,7 @@ module.exports = {
     }],
     '@typescript-eslint/lines-between-class-members': ['error', 'always', {
       exceptAfterSingleLine: false,
-      exceptAfterOverload: false,
+      exceptAfterOverload: true,
     }],
     '@typescript-eslint/member-delimiter-style': ['error', {
       multiline: {
@@ -103,7 +100,7 @@ module.exports = {
       },
     }],
     '@typescript-eslint/member-ordering': 'error',
-    '@typescript-eslint/method-signature-style': ['error', 'method'],
+    '@typescript-eslint/method-signature-style': ['error', 'property'],
     '@typescript-eslint/naming-convention': [
       'error',
       {
@@ -115,6 +112,12 @@ module.exports = {
       {
         selector: 'variable',
         format: ['camelCase', 'UPPER_CASE'],
+        leadingUnderscore: 'allow', // that's ok
+      },
+      {
+        selector: 'property',
+        format: ['camelCase'],
+        leadingUnderscore: 'allow', // _ often means private field, and that's ok
       },
       {
         selector: 'memberLike',
@@ -139,7 +142,16 @@ module.exports = {
     }],
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
-    '@typescript-eslint/no-extra-parens': 'error',
+    '@typescript-eslint/no-extra-parens': ['all', {
+      conditionalAssign: true,
+      returnAssign: false,
+      nestedBinaryExpressions: false,
+      ignoreJSX: 'all',
+      enforceForArrowConditionals: false,
+      enforceForSequenceExpressions: true,
+      enforceForNewInMemberExpressions: true,
+      enforceForFunctionPrototypeMethods: true,
+    }],
     '@typescript-eslint/no-extra-semi': 'error',
     '@typescript-eslint/no-extraneous-class': ['error', {
       allowConstructorOnly: false,
@@ -148,7 +160,7 @@ module.exports = {
       allowWithDecorator: false,
     }],
     '@typescript-eslint/no-floating-promises': ['error', {
-      ignoreVoid: false,
+      ignoreVoid: true,
       ignoreIIFE: false,
     }],
     '@typescript-eslint/no-for-in-array': 'error',
@@ -162,9 +174,13 @@ module.exports = {
       allowInGenericTypeArguments: true,
     }],
     '@typescript-eslint/no-magic-numbers': ['error', {
+      ignore: [],
+      ignoreArrayIndexes: true,
+      enforceConst: true,
+      detectObjects: false,
+      ignoreEnums: true,
       ignoreNumericLiteralTypes: true,
       ignoreReadonlyClassProperties: true,
-      ignoreEnums: true,
     }],
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-misused-promises': ['error', {
@@ -209,15 +225,19 @@ module.exports = {
       ignoreRestSiblings: false,
     }],
     '@typescript-eslint/no-use-before-define': ['error', {
+      functions: false,
+      classes: true,
+      variables: true,
       enums: true,
       typedefs: true,
     }],
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/prefer-as-const': 'error',
-    '@typescript-eslint/prefer-for-of': 'error',
+    '@typescript-eslint/prefer-for-of': 'off', // classic iteration works faster
     '@typescript-eslint/prefer-function-type': 'error',
     '@typescript-eslint/prefer-includes': 'error',
+    '@typescript-eslint/prefer-literal-enum-member': 'error',
     '@typescript-eslint/prefer-namespace-keyword': 'error',
     '@typescript-eslint/prefer-nullish-coalescing': ['error', {
       ignoreConditionalTests: false,
@@ -245,6 +265,13 @@ module.exports = {
     '@typescript-eslint/require-array-sort-compare': 'error',
     '@typescript-eslint/require-await': 'error',
     '@typescript-eslint/restrict-plus-operands': 'error',
+    '@typescript-eslint/restrict-template-expressions': ['error', {
+      allowNumber: true,
+      allowBoolean: false,
+      allowAny: false,
+      allowNullish: false,
+    }],
+    '@typescript-eslint/return-await': ['error', 'always'],
     '@typescript-eslint/semi': ['error', 'never', {
       beforeStatementContinuationChars: 'always',
     }],
@@ -279,7 +306,7 @@ module.exports = {
       },
     }],
     '@typescript-eslint/typedef': ['error', {
-      arrayDestructuring: true,
+      arrayDestructuring: false,
       arrowParameter: false,
       memberVariableDeclaration: true,
       objectDestructuring: false,

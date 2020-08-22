@@ -142,7 +142,7 @@ module.exports = {
     }],
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
-    '@typescript-eslint/no-extra-parens': ['all', {
+    '@typescript-eslint/no-extra-parens': ['error', 'all', {
       conditionalAssign: true,
       returnAssign: false,
       nestedBinaryExpressions: false,

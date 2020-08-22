@@ -201,7 +201,7 @@ module.exports = {
     'no-mixed-requires': 'error',
     'no-new-require': 'error',
     'no-path-concat': 'error',
-    'no-process-env': 'error',
+    'no-process-env': 'off', // deprecated. use node/no-process-env
     'no-process-exit': 'error',
     'no-restricted-modules': 'off',
     'no-sync': 'error',

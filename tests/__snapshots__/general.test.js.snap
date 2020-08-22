@@ -79,6 +79,7 @@ Object {
     "camelcase": Array [
       "error",
       Object {
+        "allow": Array [],
         "ignoreDestructuring": true,
         "properties": "always",
       },
@@ -632,7 +633,7 @@ Object {
       "off",
     ],
     "no-process-env": Array [
-      "error",
+      "off",
     ],
     "no-process-exit": Array [
       "error",
@@ -1185,6 +1186,7 @@ Object {
     "camelcase": Array [
       "error",
       Object {
+        "allow": Array [],
         "ignoreDestructuring": true,
         "properties": "always",
       },
@@ -1301,6 +1303,9 @@ Object {
           Object {
             "property": "defaultProps",
           },
+          Object {
+            "property": "contextTypes",
+          },
         ],
       },
     ],
@@ -1311,7 +1316,7 @@ Object {
       "error",
     ],
     "fp/no-rest-parameters": Array [
-      "error",
+      "off",
     ],
     "fp/no-this": Array [
       "error",
@@ -1320,7 +1325,7 @@ Object {
       "error",
     ],
     "fp/no-unused-expression": Array [
-      "error",
+      "off",
     ],
     "fp/no-valueof-field": Array [
       "error",
@@ -1799,7 +1804,7 @@ Object {
       "off",
     ],
     "no-process-env": Array [
-      "error",
+      "off",
     ],
     "no-process-exit": Array [
       "error",
@@ -2730,6 +2735,7 @@ Object {
     "camelcase": Array [
       "error",
       Object {
+        "allow": Array [],
         "ignoreDestructuring": true,
         "properties": "always",
       },
@@ -3283,7 +3289,7 @@ Object {
       "off",
     ],
     "no-process-env": Array [
-      "error",
+      "off",
     ],
     "no-process-exit": Array [
       "error",
@@ -3520,11 +3526,19 @@ Object {
     "node/no-unpublished-require": Array [
       "error",
     ],
+    "node/no-unsupported-features": Array [
+      "off",
+    ],
     "node/no-unsupported-features/es-builtins": Array [
       "error",
     ],
     "node/no-unsupported-features/es-syntax": Array [
       "error",
+      Object {
+        "ignores": Array [
+          "modules",
+        ],
+      },
     ],
     "node/no-unsupported-features/node-builtins": Array [
       "error",
@@ -3558,10 +3572,10 @@ Object {
       "never",
     ],
     "node/prefer-promises/dns": Array [
-      "off",
+      "error",
     ],
     "node/prefer-promises/fs": Array [
-      "off",
+      "error",
     ],
     "node/process-exit-as-throw": Array [
       "error",
@@ -3879,10 +3893,11 @@ Object {
     "node": true,
   },
   "globals": Object {},
-  "parser": "/home/lxndr/devel/projects/eslint-config/node_modules/@typescript-eslint/parser/dist/parser.js",
+  "parser": "/home/lxndr/devel/projects/eslint-config/node_modules/@typescript-eslint/parser/dist/index.js",
   "parserOptions": Object {
     "ecmaVersion": 2019,
     "sourceType": "module",
+    "useJSXTextNode": true,
   },
   "plugins": Array [
     "node",
@@ -3909,27 +3924,56 @@ Object {
     "@typescript-eslint/ban-types": Array [
       "error",
     ],
-    "@typescript-eslint/camelcase": Array [
+    "@typescript-eslint/brace-style": Array [
       "error",
-      "always",
+      "1tbs",
       Object {
-        "allow": Array [],
-        "ignoreDestructuring": false,
-        "properties": "always",
+        "allowSingleLine": false,
       },
     ],
-    "@typescript-eslint/class-name-casing": Array [
+    "@typescript-eslint/camelcase": Array [
+      "off",
+    ],
+    "@typescript-eslint/class-literal-property-style": Array [
       "error",
+      "fields",
+    ],
+    "@typescript-eslint/comma-spacing": Array [
+      "error",
+      Object {
+        "after": true,
+        "before": false,
+      },
     ],
     "@typescript-eslint/consistent-type-assertions": Array [
       "error",
+      Object {
+        "assertionStyle": "as",
+        "objectLiteralTypeAssertions": "never",
+      },
     ],
     "@typescript-eslint/consistent-type-definitions": Array [
       "error",
       "type",
     ],
+    "@typescript-eslint/default-param-last": Array [
+      "error",
+    ],
+    "@typescript-eslint/dot-notation": Array [
+      "error",
+      Object {
+        "allowKeywords": true,
+        "allowPrivateClassPropertyAccess": false,
+      },
+    ],
     "@typescript-eslint/explicit-function-return-type": Array [
-      "off",
+      "error",
+      Object {
+        "allowConciseArrowFunctionExpressionsStartingWithVoid": true,
+        "allowExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowTypedFunctionExpressions": true,
+      },
     ],
     "@typescript-eslint/explicit-member-accessibility": Array [
       "error",
@@ -3937,42 +3981,99 @@ Object {
         "accessibility": "explicit",
       },
     ],
+    "@typescript-eslint/explicit-module-boundary-types": Array [
+      "error",
+      Object {
+        "allowDirectConstAssertionInArrowFunctions": true,
+        "allowHigherOrderFunctions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowedNames": Array [],
+        "shouldTrackReferences": true,
+      },
+    ],
     "@typescript-eslint/func-call-spacing": Array [
       "error",
       "never",
-      Object {
-        "allowNewlines": false,
-      },
-    ],
-    "@typescript-eslint/generic-type-naming": Array [
-      "off",
     ],
     "@typescript-eslint/indent": Array [
       "error",
       2,
     ],
-    "@typescript-eslint/interface-name-prefix": Array [
+    "@typescript-eslint/init-declarations": Array [
       "error",
       "always",
+    ],
+    "@typescript-eslint/keyword-spacing": Array [
+      "error",
+      Object {
+        "after": true,
+        "before": true,
+      },
+    ],
+    "@typescript-eslint/lines-between-class-members": Array [
+      "error",
+      "always",
+      Object {
+        "exceptAfterOverload": false,
+        "exceptAfterSingleLine": false,
+      },
     ],
     "@typescript-eslint/member-delimiter-style": Array [
       "error",
       Object {
-        "delimiter": "none",
-        "requireLast": true,
-      },
-    ],
-    "@typescript-eslint/member-naming": Array [
-      "error",
-      Object {
-        "private": "^_",
-        "protected": "^_",
+        "multiline": Object {
+          "delimiter": "none",
+          "requireLast": true,
+        },
+        "singleline": Object {
+          "delimiter": "semi",
+          "requireLast": false,
+        },
       },
     ],
     "@typescript-eslint/member-ordering": Array [
       "error",
     ],
+    "@typescript-eslint/method-signature-style": Array [
+      "error",
+      "method",
+    ],
+    "@typescript-eslint/naming-convention": Array [
+      "error",
+      Array [
+        Object {
+          "format": Array [
+            "camelCase",
+          ],
+          "leadingUnderscore": "forbid",
+          "selector": "default",
+          "trailingUnderscore": "forbid",
+        },
+        Object {
+          "format": Array [
+            "camelCase",
+            "UPPER_CASE",
+          ],
+          "selector": "variable",
+        },
+        Object {
+          "format": Array [
+            "PascalCase",
+          ],
+          "selector": "typeLike",
+        },
+      ],
+    ],
     "@typescript-eslint/no-array-constructor": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-base-to-string": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-dupe-class-members": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-dynamic-delete": Array [
       "error",
     ],
     "@typescript-eslint/no-empty-function": Array [
@@ -3985,11 +4086,20 @@ Object {
     ],
     "@typescript-eslint/no-empty-interface": Array [
       "error",
+      Object {
+        "allowSingleExtends": true,
+      },
     ],
     "@typescript-eslint/no-explicit-any": Array [
       "error",
     ],
+    "@typescript-eslint/no-extra-non-null-assertion": Array [
+      "error",
+    ],
     "@typescript-eslint/no-extra-parens": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-extra-semi": Array [
       "error",
     ],
     "@typescript-eslint/no-extraneous-class": Array [
@@ -3998,12 +4108,20 @@ Object {
         "allowConstructorOnly": false,
         "allowEmpty": false,
         "allowStaticOnly": false,
+        "allowWithDecorator": false,
       },
     ],
     "@typescript-eslint/no-floating-promises": Array [
       "error",
+      Object {
+        "ignoreIIFE": false,
+        "ignoreVoid": false,
+      },
     ],
     "@typescript-eslint/no-for-in-array": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-implied-eval": Array [
       "error",
     ],
     "@typescript-eslint/no-inferrable-types": Array [
@@ -4013,11 +4131,21 @@ Object {
         "ignoreProperties": false,
       },
     ],
+    "@typescript-eslint/no-invalid-this": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-invalid-void-type": Array [
+      "error",
+      Object {
+        "allowInGenericTypeArguments": true,
+      },
+    ],
     "@typescript-eslint/no-magic-numbers": Array [
       "error",
       Object {
         "ignoreEnums": true,
         "ignoreNumericLiteralTypes": true,
+        "ignoreReadonlyClassProperties": true,
       },
     ],
     "@typescript-eslint/no-misused-new": Array [
@@ -4037,6 +4165,9 @@ Object {
         "allowDefinitionFiles": false,
       },
     ],
+    "@typescript-eslint/no-non-null-asserted-optional-chain": Array [
+      "error",
+    ],
     "@typescript-eslint/no-non-null-assertion": Array [
       "error",
     ],
@@ -4048,9 +4179,33 @@ Object {
     ],
     "@typescript-eslint/no-this-alias": Array [
       "error",
+      Object {
+        "allowDestructuring": false,
+      },
+    ],
+    "@typescript-eslint/no-throw-literal": Array [
+      "error",
     ],
     "@typescript-eslint/no-type-alias": Array [
       "error",
+      Object {
+        "allowAliases": "in-unions-and-intersections",
+        "allowCallbacks": "always",
+        "allowConditionalTypes": "always",
+        "allowConstructors": "always",
+        "allowLiterals": "always",
+        "allowMappedTypes": "always",
+        "allowTupleTypes": "always",
+      },
+    ],
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-unnecessary-condition": Array [
+      "error",
+      Object {
+        "allowConstantLoopConditions": true,
+      },
     ],
     "@typescript-eslint/no-unnecessary-qualifier": Array [
       "error",
@@ -4061,6 +4216,26 @@ Object {
     "@typescript-eslint/no-unnecessary-type-assertion": Array [
       "error",
     ],
+    "@typescript-eslint/no-unsafe-assignment": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-unsafe-call": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-unsafe-member-access": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-unsafe-return": Array [
+      "error",
+    ],
+    "@typescript-eslint/no-unused-expressions": Array [
+      "error",
+      Object {
+        "allowShortCircuit": false,
+        "allowTaggedTemplates": false,
+        "allowTernary": false,
+      },
+    ],
     "@typescript-eslint/no-unused-vars": Array [
       "error",
       Object {
@@ -4069,13 +4244,26 @@ Object {
         "vars": "all",
       },
     ],
+    "@typescript-eslint/no-unused-vars-experimental": Array [
+      "error",
+      Object {
+        "ignoreArgsIfArgsAfterAreUsed": false,
+      },
+    ],
     "@typescript-eslint/no-use-before-define": Array [
       "error",
+      Object {
+        "enums": true,
+        "typedefs": true,
+      },
     ],
     "@typescript-eslint/no-useless-constructor": Array [
       "error",
     ],
     "@typescript-eslint/no-var-requires": Array [
+      "error",
+    ],
+    "@typescript-eslint/prefer-as-const": Array [
       "error",
     ],
     "@typescript-eslint/prefer-for-of": Array [
@@ -4090,11 +4278,30 @@ Object {
     "@typescript-eslint/prefer-namespace-keyword": Array [
       "error",
     ],
+    "@typescript-eslint/prefer-nullish-coalescing": Array [
+      "error",
+      Object {
+        "ignoreConditionalTests": false,
+        "ignoreMixedLogicalExpressions": false,
+      },
+    ],
+    "@typescript-eslint/prefer-optional-chain": Array [
+      "error",
+    ],
     "@typescript-eslint/prefer-readonly": Array [
       "error",
       Object {
         "onlyInlineLambdas": false,
       },
+    ],
+    "@typescript-eslint/prefer-readonly-parameter-types": Array [
+      "error",
+      Object {
+        "checkParameterProperties": true,
+      },
+    ],
+    "@typescript-eslint/prefer-reduce-type-parameter": Array [
+      "error",
     ],
     "@typescript-eslint/prefer-regexp-exec": Array [
       "error",
@@ -4102,8 +4309,25 @@ Object {
     "@typescript-eslint/prefer-string-starts-ends-with": Array [
       "error",
     ],
+    "@typescript-eslint/prefer-ts-expect-error": Array [
+      "error",
+    ],
     "@typescript-eslint/promise-function-async": Array [
       "error",
+      Object {
+        "checkArrowFunctions": true,
+        "checkFunctionDeclarations": true,
+        "checkFunctionExpressions": true,
+        "checkMethodDeclarations": true,
+      },
+    ],
+    "@typescript-eslint/quotes": Array [
+      "error",
+      "single",
+      Object {
+        "allowTemplateLiterals": false,
+        "avoidEscape": false,
+      },
     ],
     "@typescript-eslint/require-array-sort-compare": Array [
       "error",
@@ -4121,7 +4345,27 @@ Object {
         "beforeStatementContinuationChars": "always",
       },
     ],
+    "@typescript-eslint/space-before-function-paren": Array [
+      "error",
+      Object {
+        "anonymous": "always",
+        "asyncArrow": "always",
+        "named": "never",
+      },
+    ],
     "@typescript-eslint/strict-boolean-expressions": Array [
+      "error",
+      Object {
+        "allowAny": false,
+        "allowNullableBoolean": false,
+        "allowNullableNumber": false,
+        "allowNullableObject": true,
+        "allowNullableString": false,
+        "allowNumber": true,
+        "allowString": true,
+      },
+    ],
+    "@typescript-eslint/switch-exhaustiveness-check": Array [
       "error",
     ],
     "@typescript-eslint/triple-slash-reference": Array [
@@ -4137,10 +4381,26 @@ Object {
       Object {
         "after": true,
         "before": false,
+        "overrides": Object {
+          "arrow": Object {
+            "after": true,
+            "before": true,
+          },
+        },
       },
     ],
     "@typescript-eslint/typedef": Array [
       "error",
+      Object {
+        "arrayDestructuring": true,
+        "arrowParameter": false,
+        "memberVariableDeclaration": true,
+        "objectDestructuring": false,
+        "parameter": true,
+        "propertyDeclaration": true,
+        "variableDeclaration": false,
+        "variableDeclarationIgnoreFunction": true,
+      },
     ],
     "@typescript-eslint/unbound-method": Array [
       "error",
@@ -4148,7 +4408,7 @@ Object {
         "ignoreStatic": false,
       },
     ],
-    "@typescript-eslint/unified-signature": Array [
+    "@typescript-eslint/unified-signatures": Array [
       "error",
     ],
     "accessor-pairs": Array [
@@ -4205,7 +4465,7 @@ Object {
       "always",
     ],
     "brace-style": Array [
-      "error",
+      "off",
       "1tbs",
       Object {
         "allowSingleLine": false,
@@ -4217,6 +4477,7 @@ Object {
     "camelcase": Array [
       "off",
       Object {
+        "allow": Array [],
         "ignoreDestructuring": true,
         "properties": "always",
       },
@@ -4233,7 +4494,7 @@ Object {
       "always-multiline",
     ],
     "comma-spacing": Array [
-      "error",
+      "off",
       Object {
         "after": true,
         "before": false,
@@ -4271,12 +4532,15 @@ Object {
     "default-case": Array [
       "error",
     ],
+    "default-param-last": Array [
+      "off",
+    ],
     "dot-location": Array [
       "error",
       "property",
     ],
     "dot-notation": Array [
-      "error",
+      "off",
       Object {
         "allowKeywords": false,
         "allowPattern": "",
@@ -4365,7 +4629,7 @@ Object {
       2,
     ],
     "init-declarations": Array [
-      "error",
+      "off",
       "always",
     ],
     "jsx-quotes": Array [
@@ -4381,7 +4645,7 @@ Object {
       },
     ],
     "keyword-spacing": Array [
-      "error",
+      "off",
       Object {
         "after": true,
         "before": true,
@@ -4398,7 +4662,7 @@ Object {
       "error",
     ],
     "lines-between-class-members": Array [
-      "error",
+      "off",
       "always",
       Object {
         "exceptAfterSingleLine": false,
@@ -4485,7 +4749,7 @@ Object {
       "error",
     ],
     "no-array-constructor": Array [
-      "error",
+      "off",
     ],
     "no-async-promise-executor": Array [
       "error",
@@ -4552,7 +4816,7 @@ Object {
       "error",
     ],
     "no-dupe-class-members": Array [
-      "error",
+      "off",
     ],
     "no-dupe-keys": Array [
       "error",
@@ -4618,7 +4882,7 @@ Object {
       "all",
     ],
     "no-extra-semi": Array [
-      "error",
+      "off",
     ],
     "no-fallthrough": Array [
       "off",
@@ -4652,7 +4916,7 @@ Object {
       "error",
     ],
     "no-invalid-this": Array [
-      "error",
+      "off",
     ],
     "no-irregular-whitespace": Array [
       "error",
@@ -4770,7 +5034,7 @@ Object {
       "off",
     ],
     "no-process-env": Array [
-      "error",
+      "off",
     ],
     "no-process-exit": Array [
       "error",
@@ -4895,7 +5159,7 @@ Object {
       "error",
     ],
     "no-unused-expressions": Array [
-      "error",
+      "off",
       Object {
         "allowShortCircuit": false,
         "allowTaggedTemplates": false,
@@ -4914,7 +5178,7 @@ Object {
       },
     ],
     "no-use-before-define": Array [
-      "error",
+      "off",
       Object {
         "classes": true,
         "functions": true,
@@ -4934,7 +5198,7 @@ Object {
       "error",
     ],
     "no-useless-constructor": Array [
-      "error",
+      "off",
     ],
     "no-useless-escape": Array [
       "error",
@@ -4973,6 +5237,9 @@ Object {
     "no-with": Array [
       "error",
     ],
+    "node/callback-return": Array [
+      "error",
+    ],
     "node/exports-style": Array [
       "error",
       "module.exports",
@@ -4983,7 +5250,20 @@ Object {
     "node/file-extension-in-import": Array [
       "off",
     ],
+    "node/global-require": Array [
+      "off",
+    ],
+    "node/handle-callback-err": Array [
+      "error",
+      "err",
+    ],
+    "node/no-callback-literal": Array [
+      "error",
+    ],
     "node/no-deprecated-api": Array [
+      "error",
+    ],
+    "node/no-exports-assign": Array [
       "error",
     ],
     "node/no-extraneous-import": Array [
@@ -4992,11 +5272,45 @@ Object {
     "node/no-extraneous-require": Array [
       "error",
     ],
+    "node/no-hide-core-modules": Array [
+      "off",
+    ],
     "node/no-missing-import": Array [
-      "error",
+      "off",
     ],
     "node/no-missing-require": Array [
+      "off",
+    ],
+    "node/no-mixed-requires": Array [
       "error",
+      Object {
+        "allowCall": false,
+        "grouping": false,
+      },
+    ],
+    "node/no-new-require": Array [
+      "error",
+    ],
+    "node/no-path-concat": Array [
+      "error",
+    ],
+    "node/no-process-env": Array [
+      "off",
+    ],
+    "node/no-process-exit": Array [
+      "error",
+    ],
+    "node/no-restricted-import": Array [
+      "error",
+    ],
+    "node/no-restricted-require": Array [
+      "error",
+    ],
+    "node/no-sync": Array [
+      "error",
+      Object {
+        "allowAtRootLevel": true,
+      },
     ],
     "node/no-unpublished-bin": Array [
       "error",
@@ -5007,11 +5321,19 @@ Object {
     "node/no-unpublished-require": Array [
       "error",
     ],
+    "node/no-unsupported-features": Array [
+      "off",
+    ],
     "node/no-unsupported-features/es-builtins": Array [
       "error",
     ],
     "node/no-unsupported-features/es-syntax": Array [
       "error",
+      Object {
+        "ignores": Array [
+          "modules",
+        ],
+      },
     ],
     "node/no-unsupported-features/node-builtins": Array [
       "error",
@@ -5045,10 +5367,10 @@ Object {
       "never",
     ],
     "node/prefer-promises/dns": Array [
-      "off",
+      "error",
     ],
     "node/prefer-promises/fs": Array [
-      "off",
+      "error",
     ],
     "node/process-exit-as-throw": Array [
       "error",
@@ -5165,7 +5487,7 @@ Object {
       "consistent-as-needed",
     ],
     "quotes": Array [
-      "error",
+      "off",
       "single",
       Object {
         "allowTemplateLiterals": false,
@@ -5277,7 +5599,7 @@ Object {
       "always",
     ],
     "space-before-function-paren": Array [
-      "error",
+      "off",
       Object {
         "anonymous": "always",
         "asyncArrow": "always",

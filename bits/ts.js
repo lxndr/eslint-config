@@ -80,7 +80,7 @@ module.exports = {
     }],
     '@typescript-eslint/func-call-spacing': ['error', 'never'],
     '@typescript-eslint/indent': ['error', 2],
-    '@typescript-eslint/init-declarations': ['error', 'always'],
+    '@typescript-eslint/init-declarations': 'off', // sometimes it's useful
     '@typescript-eslint/keyword-spacing': ['error', {
       before: true,
       after: true,

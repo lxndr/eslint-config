@@ -20,6 +20,7 @@ module.exports = {
     'no-control-regex': 'error',
     'no-debugger': 'error',
     'no-dupe-args': 'error',
+    'no-dupe-else-if':' error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
     'no-empty': ['error', {
@@ -31,6 +32,7 @@ module.exports = {
     'no-extra-parens': ['error', 'all'],
     'no-extra-semi': 'error',
     'no-func-assign': 'error',
+    'no-import-assign': 'error',
     'no-inner-declarations': ['error', 'functions'],
     'no-invalid-regexp': 'error',
     'no-irregular-whitespace': ['error', {
@@ -39,17 +41,21 @@ module.exports = {
       skipRegExps: false,
       skipTemplates: false,
     }],
+    'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
     'no-obj-calls': 'error',
     'no-prototype-builtins': 'error',
     'no-regex-spaces': 'error',
+    'no-setter-return': 'error',
     'no-sparse-arrays': 'error',
     'no-template-curly-in-string': 'off',
     'no-unexpected-multiline': 'error',
     'no-unreachable': 'error',
+    'no-unreachable-loop': 'error',
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
-    'require-atomic-updates': 'error',
+    'no-useless-backreference': 'error',
+    'require-atomic-updates': 'off', // i don't get it...
     'use-isnan': 'error',
     'valid-typeof': 'error',
 
@@ -63,12 +69,14 @@ module.exports = {
     }],
     'block-scoped-var': 'error',
     'class-methods-use-this': 'error',
-    'complexity': ['error', 20],
+    'complexity': 'off', // makes to write unnecessary functions
     'consistent-return': ['error', {
       treatUndefinedAsUnspecified: false,
     }],
     'curly': ['error', 'all'],
     'default-case': 'error',
+    'default-case-last': 'error',
+    'default-param-last': 'error',
     'dot-location': ['error', 'property'],
     'dot-notation': ['error', {
       allowKeywords: true,
@@ -76,6 +84,7 @@ module.exports = {
     'eqeqeq': ['error', 'always', {
       null: 'ignore',
     }],
+    'grouped-accessor-pairs': ['error', 'getBeforeSet'],
     'guard-for-in': 'error',
     'max-classes-per-file': 'off',
     'no-alert': 'error',
@@ -164,6 +173,9 @@ module.exports = {
     'no-with': 'error',
     'prefer-named-capture-group': 'off',
     'prefer-promise-reject-errors': 'error',
+    'prefer-regex-literals': ['error', {
+      disallowRedundantWrapping: true,
+    }],
     'radix': ['error', 'always'],
     'require-await': 'error',
     'require-unicode-regexp': 'error',
@@ -175,7 +187,7 @@ module.exports = {
     'strict': ['error', 'never'],
 
     /* variables */
-    'init-declarations': ['error', 'always'],
+    'init-declarations': 'off', // sometimes it's useful
     'no-delete-var': 'error',
     'no-label-var': 'error',
     'no-restricted-globals': 'off', // project specific
@@ -190,23 +202,10 @@ module.exports = {
       ignoreRestSiblings: false,
     }],
     'no-use-before-define': ['error', {
-      functions: true,
+      functions: false,
       classes: true,
       variables: true,
     }],
-
-    /* node */
-    'callback-return': 'error',
-    'global-require': 'error',
-    'handle-callback-err': 'error',
-    'no-buffer-constructor': 'error',
-    'no-mixed-requires': 'error',
-    'no-new-require': 'error',
-    'no-path-concat': 'error',
-    'no-process-env': 'off', // deprecated. use node/no-process-env
-    'no-process-exit': 'error',
-    'no-restricted-modules': 'off',
-    'no-sync': 'error',
 
     /* style */
     'array-bracket-newline': ['error', 'consistent'],
@@ -246,7 +245,8 @@ module.exports = {
       allowArrowFunctions: true,
     }],
     'function-paren-newline': ['error', 'consistent'],
-    'id-blacklist': 'off',
+    'function-call-argument-newline': ['error', 'consistent'],
+    'id-denylist': 'off',
     'id-length': 'off',
     'id-match': 'off',
     'implicit-arrow-linebreak': 'off',
@@ -281,7 +281,7 @@ module.exports = {
       exceptAfterSingleLine: false,
     }],
     'max-depth': ['error', 4],
-    'max-len': ['error', 100],
+    'max-len': ['error', 120],
     'max-lines': ['error', {
       max: 300,
       skipBlankLines: true,
@@ -292,11 +292,9 @@ module.exports = {
       max: 3,
     }],
     'max-params': ['error', {
-      max: 3,
+      max: 4,
     }],
-    'max-statements': ['error', {
-      max: 15,
-    }],
+    'max-statements': 'off', // makes to write unnecessary functions
     'max-statements-per-line': ['error', {
       max: 2,
     }],
@@ -349,9 +347,24 @@ module.exports = {
     'one-var': ['error', 'never'],
     'one-var-declaration-per-line': ['error', 'always'],
     'operator-assignment': ['error', 'always'],
-    'operator-linebreak': ['error', 'after'],
+    'operator-linebreak': ['error', 'after', {
+      overrides: { "?": "before", ":": "before" },
+    }],
     'padded-blocks': ['error', 'never'],
-    'padding-line-between-statements': 'error',
+    'padding-line-between-statements': [
+      'error',
+      {
+        next: 'block-like',
+        prev: '*',
+        blankLine: 'always',
+      },
+      {
+        next: '*',
+        prev: 'block-like',
+        blankLine: 'always',
+      },
+    ],
+    'prefer-exponentiation-operator': 'error',
     'prefer-object-spread': 'error',
     'quote-props': ['error', 'consistent-as-needed'],
     'quotes': ['error', 'single', {
@@ -398,7 +411,7 @@ module.exports = {
       requireReturnForObjectLiteral: false,
     }],
     'arrow-parens': ['error', 'as-needed', {
-      requireForBlockBody: true,
+      requireForBlockBody: false,
     }],
     'arrow-spacing': ['error', {
       before: true,
@@ -411,7 +424,7 @@ module.exports = {
     }],
     'no-class-assign': 'error',
     'no-confusing-arrow': ['error', {
-      allowParens: false,
+      allowParens: true,
     }],
     'no-const-assign': 'error',
     'no-dupe-class-members': 'error',
@@ -419,6 +432,7 @@ module.exports = {
       includeExports: false,
     }],
     'no-new-symbol': 'error',
+    'no-restricted-exports': 'off',
     'no-restricted-imports': 'off',
     'no-this-before-super': 'error',
     'no-useless-computed-key': 'error',

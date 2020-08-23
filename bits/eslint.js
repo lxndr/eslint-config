@@ -13,14 +13,15 @@ module.exports = {
     'no-await-in-loop': 'off',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': ['error', 'always'],
-    'no-console': 'error',
+    'no-console': ['error', {
+    }],
     'no-constant-condition': ['error', {
       checkLoops: false,
     }],
     'no-control-regex': 'error',
     'no-debugger': 'error',
     'no-dupe-args': 'error',
-    'no-dupe-else-if':' error',
+    'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
     'no-empty': ['error', {
@@ -105,13 +106,17 @@ module.exports = {
     'no-extra-label': 'error',
     'no-fallthrough': 'off',
     'no-floating-decimal': 'error',
-    'no-global-assign': 'error',
+    'no-global-assign': ['error', {
+      exceptions: [],
+    }],
     'no-implicit-coercion': ['error', { // ! and !! are common idioms
       allow: ['!!'],
     }],
     'no-implicit-globals': 'error',
     'no-implied-eval': 'error',
-    'no-invalid-this': 'error',
+    'no-invalid-this': ['error', {
+      capIsConstructor: true,
+    }],
     'no-iterator': 'error',
     'no-labels': ['error', {
       allowLoop: false,
@@ -230,7 +235,9 @@ module.exports = {
       after: true,
     }],
     'comma-style': ['error', 'last'],
-    'computed-property-spacing': ['error', 'never'],
+    'computed-property-spacing': ['error', 'never', {
+      enforceForClassMembers: true,
+    }],
     'consistent-this': ['error', 'self'],
     'eol-last': ['error', 'always'],
     'func-call-spacing': ['error', 'never'],
@@ -281,7 +288,16 @@ module.exports = {
       exceptAfterSingleLine: false,
     }],
     'max-depth': ['error', 4],
-    'max-len': ['error', 120],
+    'max-len': ['error', {
+      code: 120,
+      tabWidth: 2,
+      ignoreComments: false,
+      ignoreTrailingComments: false,
+      ignoreUrls: false,
+      ignoreStrings: false,
+      ignoreTemplateLiterals: false,
+      ignoreRegExpLiterals: false,
+    }],
     'max-lines': ['error', {
       max: 300,
       skipBlankLines: true,

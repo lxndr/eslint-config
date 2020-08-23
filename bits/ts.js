@@ -23,6 +23,7 @@ module.exports = {
     'no-extra-parens': 'off',
     'no-extra-semi': 'off',
     'no-invalid-this': 'off',
+    'no-loss-of-precision': 'off',
     'no-magic-numbers': 'off',
     'no-unused-expressions': 'off',
     'no-unused-vars': 'off',
@@ -169,10 +170,13 @@ module.exports = {
       ignoreParameters: false,
       ignoreProperties: false,
     }],
-    '@typescript-eslint/no-invalid-this': 'error',
+    '@typescript-eslint/no-invalid-this': ['error', {
+      capIsConstructor: true,
+    }],
     '@typescript-eslint/no-invalid-void-type': ['error', {
       allowInGenericTypeArguments: true,
     }],
+    '@typescript-eslint/no-loss-of-precision': 'error',
     '@typescript-eslint/no-magic-numbers': ['error', {
       ignore: [],
       ignoreArrayIndexes: true,
@@ -200,13 +204,18 @@ module.exports = {
     }],
     '@typescript-eslint/no-throw-literal': 'error',
     '@typescript-eslint/no-type-alias': 'off',
-    '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+    '@typescript-eslint/no-unnecessary-boolean-literal-compare': ['error', {
+      allowComparingNullableBooleansToTrue: true,
+      allowComparingNullableBooleansToFalse: true,
+    }],
     '@typescript-eslint/no-unnecessary-condition': ['error', {
       allowConstantLoopConditions: true,
     }],
     '@typescript-eslint/no-unnecessary-qualifier': 'error',
     '@typescript-eslint/no-unnecessary-type-arguments': 'error',
-    '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+    '@typescript-eslint/no-unnecessary-type-assertion': ['error', {
+      typesToIgnore: [],
+    }],
     '@typescript-eslint/no-unsafe-assignment': 'error',
     '@typescript-eslint/no-unsafe-call': 'error',
     '@typescript-eslint/no-unsafe-member-access': 'error',
@@ -234,6 +243,7 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/prefer-as-const': 'error',
+    '@typescript-eslint/prefer-enum-initializers': 'off',
     '@typescript-eslint/prefer-for-of': 'off', // classic iteration works faster
     '@typescript-eslint/prefer-function-type': 'error',
     '@typescript-eslint/prefer-includes': 'error',
@@ -259,9 +269,13 @@ module.exports = {
       allowTemplateLiterals: false,
       avoidEscape: false,
     }],
-    '@typescript-eslint/require-array-sort-compare': 'error',
+    '@typescript-eslint/require-array-sort-compare': ['error', {
+      ignoreStringArrays: true,
+    }],
     '@typescript-eslint/require-await': 'error',
-    '@typescript-eslint/restrict-plus-operands': 'error',
+    '@typescript-eslint/restrict-plus-operands': ['error', {
+      checkCompoundAssignments: true,
+    }],
     '@typescript-eslint/restrict-template-expressions': ['error', {
       allowNumber: true,
       allowBoolean: false,

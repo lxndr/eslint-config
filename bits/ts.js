@@ -1,4 +1,4 @@
-/* @typescript-eslint/eslint-plugin@3.0.2 */
+/* @typescript-eslint/eslint-plugin@4.0.0-alpha.12 */
 
 module.exports = {
   parser: '@typescript-eslint/parser',
@@ -100,7 +100,7 @@ module.exports = {
       },
     }],
     '@typescript-eslint/member-ordering': 'error',
-    '@typescript-eslint/method-signature-style': ['error', 'property'],
+    '@typescript-eslint/method-signature-style': 'off', // both are ok
     '@typescript-eslint/naming-convention': [
       'error',
       {
@@ -193,7 +193,7 @@ module.exports = {
     }],
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
     '@typescript-eslint/no-non-null-assertion': 'error',
-    '@typescript-eslint/no-parameter-properties': 'error',
+    '@typescript-eslint/no-parameter-properties': 'off', // acually it's quite useful
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-this-alias': ['error', {
       allowDestructuring: false,
@@ -239,10 +239,7 @@ module.exports = {
     '@typescript-eslint/prefer-includes': 'error',
     '@typescript-eslint/prefer-literal-enum-member': 'error',
     '@typescript-eslint/prefer-namespace-keyword': 'error',
-    '@typescript-eslint/prefer-nullish-coalescing': ['error', {
-      ignoreConditionalTests: false,
-      ignoreMixedLogicalExpressions: false,
-    }],
+    '@typescript-eslint/prefer-nullish-coalescing': 'off', // let the dev to decide which one to use
     '@typescript-eslint/prefer-optional-chain': 'error',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off', // too cumbersome. prefer no-param-reassign
     '@typescript-eslint/prefer-readonly': ['error', {
@@ -308,12 +305,12 @@ module.exports = {
     '@typescript-eslint/typedef': ['error', {
       arrayDestructuring: false,
       arrowParameter: false,
-      memberVariableDeclaration: true,
+      memberVariableDeclaration: false,
       objectDestructuring: false,
       parameter: true,
       propertyDeclaration: true,
       variableDeclaration: false,
-      variableDeclarationIgnoreFunction: true,
+      variableDeclarationIgnoreFunction: false,
     }],
     '@typescript-eslint/unbound-method': ['error', {
       ignoreStatic: false,

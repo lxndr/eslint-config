@@ -71,7 +71,7 @@ module.exports = {
     'default-case': 'error',
     'dot-location': ['error', 'property'],
     'dot-notation': ['error', {
-      allowKeywords: false,
+      allowKeywords: true,
     }],
     'eqeqeq': ['error', 'always', {
       null: 'ignore',
@@ -221,7 +221,10 @@ module.exports = {
       ignoreDestructuring: true,
       allow: [],
     }],
-    'capitalized-comments': ['error', 'never'],
+    'capitalized-comments': ['error', 'always', {
+      ignoreInlineComments: true,
+      ignoreConsecutiveComments: true,
+    }],
     'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': ['error', {
       before: false,
@@ -260,7 +263,20 @@ module.exports = {
     }],
     'line-comment-position': 'off',
     'linebreak-style': ['error', 'unix'],
-    'lines-around-comment': 'error',
+    'lines-around-comment': ['error', {
+      'beforeBlockComment': true,
+      'afterBlockComment': false,
+      'beforeLineComment': true,
+      'afterLineComment': false,
+      'allowBlockStart': true,
+      'allowBlockEnd': false,
+      'allowObjectStart': true,
+      'allowObjectEnd': false,
+      'allowArrayStart': true,
+      'allowArrayEnd': false,
+      'allowClassStart': true,
+      'allowClassEnd': false,
+    }],
     'lines-between-class-members': ['error', 'always', {
       exceptAfterSingleLine: false,
     }],

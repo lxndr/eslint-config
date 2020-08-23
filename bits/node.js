@@ -8,7 +8,6 @@ module.exports = {
     'node',
   ],
   rules: {
-
     /* possible errors */
     'node/handle-callback-err': ['error', 'err'],
     'node/no-callback-literal': 'error',
@@ -35,7 +34,7 @@ module.exports = {
     'node/no-deprecated-api': 'error',
 
     /* stylistic issues */
-    'node/callback-return': 'error',
+    'node/callback-return': 'off', // a bit buggy with promises
     'node/exports-style': ['error', 'module.exports', {
       allowBatchAssign: false,
     }],

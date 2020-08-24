@@ -29,7 +29,9 @@ module.exports = {
     }],
     'no-empty-character-class': 'error',
     'no-ex-assign': 'error',
-    'no-extra-boolean-cast': 'error',
+    'no-extra-boolean-cast': ['error', {
+      enforceForLogicalOperands: false,
+    }],
     'no-extra-parens': ['error', 'all'],
     'no-extra-semi': 'error',
     'no-func-assign': 'error',
@@ -45,6 +47,7 @@ module.exports = {
     'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
     'no-obj-calls': 'error',
+    'no-promise-executor-return': 'error',
     'no-prototype-builtins': 'error',
     'no-regex-spaces': 'error',
     'no-setter-return': 'error',
@@ -69,7 +72,9 @@ module.exports = {
       allowImplicit: false,
     }],
     'block-scoped-var': 'error',
-    'class-methods-use-this': 'error',
+    'class-methods-use-this': ['error', {
+      exceptMethods: [],
+    }],
     'complexity': 'off', // makes to write unnecessary functions
     'consistent-return': ['error', {
       treatUndefinedAsUnspecified: false,
@@ -91,6 +96,7 @@ module.exports = {
     'no-alert': 'error',
     'no-caller': 'error',
     'no-case-declarations': 'error',
+    'no-constructor-return': 'error',
     'no-div-regex': 'error',
     'no-else-return': ['error', {
       allowElseIf: false,
@@ -100,8 +106,12 @@ module.exports = {
     }],
     'no-empty-pattern': 'error',
     'no-eq-null': 'off',
-    'no-eval': 'error',
-    'no-extend-native': 'error',
+    'no-eval': ['error', {
+      allowIndirect: false,
+    }],
+    'no-extend-native': ['error', {
+      exceptions: [],
+    }],
     'no-extra-bind': 'error',
     'no-extra-label': 'error',
     'no-fallthrough': 'off',
@@ -112,7 +122,9 @@ module.exports = {
     'no-implicit-coercion': ['error', { // ! and !! are common idioms
       allow: ['!!'],
     }],
-    'no-implicit-globals': 'error',
+    'no-implicit-globals': ['error', {
+      lexicalBindings: false,
+    }],
     'no-implied-eval': 'error',
     'no-invalid-this': ['error', {
       capIsConstructor: true,
@@ -214,7 +226,11 @@ module.exports = {
 
     /* style */
     'array-bracket-newline': ['error', 'consistent'],
-    'array-bracket-spacing': ['error', 'never'],
+    'array-bracket-spacing': ['error', 'never', {
+      singleValue: false,
+      objectsInArrays: false,
+      arraysInArrays: false,
+    }],
     'array-element-newline': ['error', 'consistent'],
     'block-spacing': ['error', 'always'],
     'brace-style': ['error', '1tbs', {
@@ -234,7 +250,9 @@ module.exports = {
       before: false,
       after: true,
     }],
-    'comma-style': ['error', 'last'],
+    'comma-style': ['error', 'last', {
+      exceptions: {},
+    }],
     'computed-property-spacing': ['error', 'never', {
       enforceForClassMembers: true,
     }],
@@ -271,18 +289,18 @@ module.exports = {
     'line-comment-position': 'off',
     'linebreak-style': ['error', 'unix'],
     'lines-around-comment': ['error', {
-      'beforeBlockComment': true,
-      'afterBlockComment': false,
-      'beforeLineComment': true,
-      'afterLineComment': false,
-      'allowBlockStart': true,
-      'allowBlockEnd': false,
-      'allowObjectStart': true,
-      'allowObjectEnd': false,
-      'allowArrayStart': true,
-      'allowArrayEnd': false,
-      'allowClassStart': true,
-      'allowClassEnd': false,
+      beforeBlockComment: true,
+      afterBlockComment: false,
+      beforeLineComment: true,
+      afterLineComment: false,
+      allowBlockStart: true,
+      allowBlockEnd: false,
+      allowObjectStart: true,
+      allowObjectEnd: false,
+      allowArrayStart: true,
+      allowArrayEnd: false,
+      allowClassStart: true,
+      allowClassEnd: false,
     }],
     'lines-between-class-members': ['error', 'always', {
       exceptAfterSingleLine: false,

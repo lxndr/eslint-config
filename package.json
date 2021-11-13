@@ -1,6 +1,6 @@
 {
   "name": "@lxndr/eslint-config",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "My awesome  eslint config",
   "main": "index.js",
   "author": "lxndr",
@@ -9,23 +9,21 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "eslint": "^6.1.0"
+    "eslint": "^8.2.0"
   },
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.0.0-alpha.12",
-    "@typescript-eslint/parser": "^4.0.0-alpha.12",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
     "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.6.1",
-    "eslint-plugin-react-native": "^3.7.0",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^3.11.0",
     "eslint-plugin-security": "^1.4.0"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^4.0.0-alpha.12",
-    "eslint": "^7.7.0",
-    "jest": "^26.4.2",
-    "typescript": "^4.0.0-alpha.12"
+    "jest": "^27.3.1",
+    "typescript": "^4.4.4"
   }
 }

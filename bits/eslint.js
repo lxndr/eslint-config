@@ -1,39 +1,43 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 2019,
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   rules: {
-    /* errors */
+    /* Possible Problems */
+    'array-callback-return': ['error', {
+      allowImplicit: false,
+      checkForEach: true,
+    }],
+    'constructor-super': 'error',
     'for-direction': 'error',
     'getter-return': ['error', {
       allowImplicit: false,
     }],
     'no-async-promise-executor': 'error',
     'no-await-in-loop': 'off',
+    'no-class-assign': 'error',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': ['error', 'always'],
-    'no-console': ['error', {
-    }],
+    'no-const-assign': 'error',
     'no-constant-condition': ['error', {
       checkLoops: false,
     }],
+    'no-constructor-return': 'error',
     'no-control-regex': 'error',
     'no-debugger': 'error',
     'no-dupe-args': 'error',
+    'no-dupe-class-members': 'error',
     'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
-    'no-empty': ['error', {
-      allowEmptyCatch: true,
+    'no-duplicate-imports': ['error', {
+      includeExports: false,
     }],
     'no-empty-character-class': 'error',
+    'no-empty-pattern': 'error',
     'no-ex-assign': 'error',
-    'no-extra-boolean-cast': ['error', {
-      enforceForLogicalOperands: false,
-    }],
-    'no-extra-parens': ['error', 'all'],
-    'no-extra-semi': 'error',
+    'no-fallthrough': 'error',
     'no-func-assign': 'error',
     'no-import-assign': 'error',
     'no-inner-declarations': ['error', 'functions'],
@@ -46,30 +50,74 @@ module.exports = {
     }],
     'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
+    'no-new-symbol': 'error',
     'no-obj-calls': 'error',
     'no-promise-executor-return': 'error',
     'no-prototype-builtins': 'error',
-    'no-regex-spaces': 'error',
+    'no-self-assign': ['error', {
+      props: false,
+    }],
+    'no-self-compare': 'error',
     'no-setter-return': 'error',
     'no-sparse-arrays': 'error',
-    'no-template-curly-in-string': 'off',
+    'no-template-curly-in-string': 'error',
+    'no-this-before-super': 'error',
+    'no-undef': 'error',
     'no-unexpected-multiline': 'error',
+    'no-unmodified-loop-condition': 'error',
     'no-unreachable': 'error',
-    'no-unreachable-loop': 'error',
+    'no-unreachable-loop': ['error', {
+      ignore: [],
+    }],
     'no-unsafe-finally': 'error',
-    'no-unsafe-negation': 'error',
+    'no-unsafe-negation': ['error', {
+      enforceForOrderingRelations: true,
+    }],
+    'no-unsafe-optional-chaining': ['error', {
+      disallowArithmeticOperators: true,
+    }],
+    'no-unused-private-class-members': 'error',
+    'no-unused-vars': ['error', {
+      vars: 'all',
+      args: 'after-used',
+      ignoreRestSiblings: false,
+      caughtErrors: 'all',
+    }],
+    'no-use-before-define': ['error', {
+      functions: false,
+      classes: true,
+      variables: true,
+    }],
     'no-useless-backreference': 'error',
-    'require-atomic-updates': 'off', // i don't get it...
-    'use-isnan': 'error',
-    'valid-typeof': 'error',
+    'require-atomic-updates': 'error', // i don't get it...
+    'use-isnan': ['error', {
+      enforceForSwitchCase: true,
+      enforceForIndexOf: true,
+    }],
+    'valid-typeof': ['error', {
+      requireStringLiterals: true,
+    }],
+
+    /* Suggestions */
+
+
+    /* errors */
+    'no-console': ['error', {
+    }],
+    'no-empty': ['error', {
+      allowEmptyCatch: true,
+    }],
+    'no-extra-boolean-cast': ['error', {
+      enforceForLogicalOperands: false,
+    }],
+    'no-extra-parens': ['error', 'all'],
+    'no-extra-semi': 'error',
+    'no-regex-spaces': 'error',
 
     /* best practices */
     'accessor-pairs': ['error', {
       setWithoutGet: true,
       getWithoutSet: false,
-    }],
-    'array-callback-return': ['error', {
-      allowImplicit: false,
     }],
     'block-scoped-var': 'error',
     'class-methods-use-this': ['error', {
@@ -96,7 +144,6 @@ module.exports = {
     'no-alert': 'error',
     'no-caller': 'error',
     'no-case-declarations': 'error',
-    'no-constructor-return': 'error',
     'no-div-regex': 'error',
     'no-else-return': ['error', {
       allowElseIf: false,
@@ -104,7 +151,6 @@ module.exports = {
     'no-empty-function': ['error', {
       allow: ['functions'],
     }],
-    'no-empty-pattern': 'error',
     'no-eq-null': 'off',
     'no-eval': ['error', {
       allowIndirect: false,
@@ -114,7 +160,6 @@ module.exports = {
     }],
     'no-extra-bind': 'error',
     'no-extra-label': 'error',
-    'no-fallthrough': 'off',
     'no-floating-decimal': 'error',
     'no-global-assign': ['error', {
       exceptions: [],
@@ -162,13 +207,8 @@ module.exports = {
     'no-return-assign': ['error', 'always'],
     'no-return-await': 'error',
     'no-script-url': 'error',
-    'no-self-assign': ['error', {
-      props: false,
-    }],
-    'no-self-compare': 'error',
     'no-sequences': 'error',
     'no-throw-literal': 'error',
-    'no-unmodified-loop-condition': 'error',
     'no-unused-expressions': ['error', {
       allowShortCircuit: false,
       allowTernary: false,
@@ -210,19 +250,8 @@ module.exports = {
     'no-restricted-globals': 'off', // project specific
     'no-shadow': 'off',
     'no-shadow-restricted-names': 'error',
-    'no-undef': 'error',
     'no-undef-init': 'error',
     'no-undefined': 'error',
-    'no-unused-vars': ['error', {
-      vars: 'all',
-      args: 'after-used',
-      ignoreRestSiblings: false,
-    }],
-    'no-use-before-define': ['error', {
-      functions: false,
-      classes: true,
-      variables: true,
-    }],
 
     /* style */
     'array-bracket-newline': ['error', 'consistent'],
@@ -451,24 +480,15 @@ module.exports = {
       before: true,
       after: true,
     }],
-    'constructor-super': 'error',
     'generator-star-spacing': ['error', {
       before: false,
       after: true,
     }],
-    'no-class-assign': 'error',
     'no-confusing-arrow': ['error', {
       allowParens: true,
     }],
-    'no-const-assign': 'error',
-    'no-dupe-class-members': 'error',
-    'no-duplicate-imports': ['error', {
-      includeExports: false,
-    }],
-    'no-new-symbol': 'error',
     'no-restricted-exports': 'off',
     'no-restricted-imports': 'off',
-    'no-this-before-super': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-constructor': 'error',
     'no-useless-rename': ['error', {

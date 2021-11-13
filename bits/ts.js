@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 /* @typescript-eslint/eslint-plugin@4.0.0-alpha.12 */
 
 module.exports = {

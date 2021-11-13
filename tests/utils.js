@@ -1,17 +1,16 @@
 /* eslint-env jest */
-/* eslint-disable no-loop-func */
-const { CLIEngine } = require('eslint')
+const { ESLint } = require('eslint')
 
 const testConfig = (testName, configs) => {
   describe(testName, () => {
-    const cli = new CLIEngine({
+    const cli = new ESLint({
       useEslintrc: false,
       baseConfig: {
         extends: configs,
       },
     })
 
-    const calculatedConfig = cli.getConfigForFile('./index.js')
+    const calculatedConfig = cli.calculateConfigForFile('./index.js')
     const rules = cli.getRules()
 
     for (const [ruleName, rule] of rules) {

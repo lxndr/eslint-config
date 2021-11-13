@@ -225,9 +225,6 @@ module.exports = {
       allowTernary: false,
       allowTaggedTemplates: false,
     }],
-    '@typescript-eslint/no-unused-vars-experimental': ['error', {
-      ignoreArgsIfArgsAfterAreUsed: false,
-    }],
     '@typescript-eslint/no-unused-vars': ['error', {
       vars: 'all',
       args: 'after-used',

@@ -89,7 +89,7 @@ module.exports = {
       variables: true,
     }],
     'no-useless-backreference': 'error',
-    'require-atomic-updates': 'error', // i don't get it...
+    'require-atomic-updates': 'off', // I don't get it...
     'use-isnan': ['error', {
       enforceForSwitchCase: true,
       enforceForIndexOf: true,

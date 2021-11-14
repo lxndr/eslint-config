@@ -1,3 +1,5 @@
+/* eslint-plugin-security@1.4.0 */
+
 module.exports = {
   plugins: [
     'security',

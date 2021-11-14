@@ -1202,6 +1202,10 @@ Object {
 }
 `;
 
+exports[`browser+react config should be correct 1`] = `Promise {}`;
+
+exports[`browser+react+ts config should be correct 1`] = `Promise {}`;
+
 exports[`node config should be correct 1`] = `
 Object {
   "env": Object {

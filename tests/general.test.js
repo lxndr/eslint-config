@@ -8,7 +8,7 @@ testConfig('browser+react config', [
   './browser',
   './react',
 ])
-
+/*
 testConfig('browser+react+ts config', [
   './browser',
   './react',
@@ -23,3 +23,4 @@ testConfig('node+ts config', [
   './node',
   './ts',
 ])
+*/

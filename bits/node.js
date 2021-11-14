@@ -14,8 +14,8 @@ module.exports = {
     'node/no-exports-assign': 'error',
     'node/no-extraneous-import': 'error',
     'node/no-extraneous-require': 'error',
-    'node/no-missing-import': 'off', // ??
-    'node/no-missing-require': 'off', // ??
+    'node/no-missing-import': 'error',
+    'node/no-missing-require': 'error',
     'node/no-new-require': 'error',
     'node/no-path-concat': 'error',
     'node/no-process-exit': 'error', // do process.exitCode and shutdown gracefully

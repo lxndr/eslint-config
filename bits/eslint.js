@@ -277,7 +277,7 @@ module.exports = {
     'no-script-url': 'error',
     'no-sequences': 'error',
     'no-shadow': ['error', {
-      builtinGlobals: true,
+      builtinGlobals: false,
       hoist: 'all',
       allow: [],
     }],

@@ -1,3 +1,5 @@
+/* eslint-plugin-import@2.25.3 */
+
 module.exports = {
   plugins: [
     'import',

@@ -1,3 +1,5 @@
+/* eslint-plugin-react-hooks@4.3.0 */
+
 module.exports = {
   plugin: [
     'react-hooks',

@@ -77,7 +77,7 @@ module.exports = {
       customValidators: [],
       skipUndeclared: false,
     }],
-    'react/react-in-jsx-scope': 'error',
+    'react/react-in-jsx-scope': 'off', // react@17
     'react/require-default-props': ['error', {
       forbidDefaultForRequired: true,
     }],

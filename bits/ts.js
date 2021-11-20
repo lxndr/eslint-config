@@ -31,20 +31,14 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-exports': 'error',
     '@typescript-eslint/consistent-type-imports': ['error', {
-      prefer: 'type-imports',
+      prefer: 'no-type-imports',
       disallowTypeAnnotations: true,
     }],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': ['error', {
       accessibility: 'no-public',
     }],
-    '@typescript-eslint/explicit-module-boundary-types': ['error', {
-      allowArgumentsExplicitlyTypedAsAny: false,
-      allowDirectConstAssertionInArrowFunctions: false,
-      allowedNames: [],
-      allowHigherOrderFunctions: true,
-      allowTypedFunctionExpressions: true,
-    }],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/member-delimiter-style': ['error', {
       multiline: {
         delimiter: 'none',
@@ -349,7 +343,8 @@ module.exports = {
     '@typescript-eslint/no-unused-expressions': ['error', {
       allowShortCircuit: false,
       allowTernary: false,
-      allowTaggedTemplates: false,
+      allowTaggedTemplates: true,
+      enforceForJSX: true,
     }],
 
     'no-unused-vars': 'off',
